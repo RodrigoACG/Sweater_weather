@@ -50,6 +50,7 @@ class Weather
   end
 
   def todays_weather
+    # require 'pry'; binding.pry
     {
       summary: @current_weather[:condition],
       temperature: @current_weather[:temperature]

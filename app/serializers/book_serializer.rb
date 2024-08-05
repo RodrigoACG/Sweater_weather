@@ -1,29 +1,4 @@
 class BookSerializer 
-  # include JSONAPI::Serializer
-
-  # def initialize(destination, weather, facade, total_books_found)
-  #   @destiation = destination 
-  #   @weather = weather 
-  #   @facade = facade
-  #   @total_books_found = total_books_found
-  # end
-
-  # def serialize
-  #   require 'pry'; binding.pry
-  #   {
-  #     data: {
-  #       id: "null",
-  #       type: "books",
-  #       attributes: {
-  #         destination: @destination,
-  #         forecast: @weather,
-  #         total_books_found: @total_books_found,
-  #         books: @facade.book_search
-  #       }
-  #     }
-  #   }
-  # end
-  
   def initialize(destination, forecast, total_books_found, books)
     @destination = destination
     @forecast = forecast
