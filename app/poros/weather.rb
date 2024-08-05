@@ -1,12 +1,14 @@
 class Weather 
   attr_reader :current_weather,
               :daily_weather,
-              :hourly_weather
+              :hourly_weather,
+              :todays_weather
 
   def initialize(forecast_data)
     @current_weather = current_data(forecast_data[:current])
     @daily_weather = daily_data(forecast_data[:forecast][:forecastday])
     @hourly_weather = hourly_data(forecast_data[:forecast][:forecastday].first[:hour])
+    @todays_weather = todays_weather
   end
 
   def current_data(weather_data)
@@ -45,5 +47,12 @@ class Weather
         icon: day[:condition][:icon]
       }
     end
+  end
+
+  def todays_weather
+    {
+      summary: @current_weather[:condition],
+      temperature: @current_weather[:temperature]
+    }
   end
 end
