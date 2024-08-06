@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       # require 'pry'; binding.pry
       resources :weather, only: [:index]
       resources :users, only: [:create]
+      resources :sessions, only: [:create] 
     end
   end
 end
