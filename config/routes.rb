@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      # require 'pry'; binding.pry
       resources :weather, only: [:index]
+      resources :users, only: [:create]
     end
   end
 end
