@@ -12,6 +12,7 @@ RSpec.describe 'Weather tests', :vcr do
       
       data = JSON.parse(response.body, symbolize_names:true)[:data]
       
+      # require 'pry'; binding.pry
       expect(data).to be_a(Hash)
       expect(data[:id]).to be(nil)
 
@@ -23,7 +24,6 @@ RSpec.describe 'Weather tests', :vcr do
   
       attributes = data[:attributes]
       expect(attributes).to be_a(Hash)
-  
       data_current = attributes[:current_weather]
 
       # Current  
