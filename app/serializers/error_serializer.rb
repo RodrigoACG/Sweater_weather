@@ -3,7 +3,7 @@ class ErrorSerializer
     @errors_object = errors_object
   end
 
-  def error_json
+  def serialize_json
     {
       "errors": [
         {
